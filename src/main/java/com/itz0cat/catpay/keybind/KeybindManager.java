@@ -11,6 +11,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 public class KeybindManager {
@@ -18,18 +19,20 @@ public class KeybindManager {
     private static KeyBinding receiveKeyBinding;
 
     public static void init() {
+        KeyBinding.Category category = KeyBinding.Category.create(Identifier.of("catpay", "general"));
+
         toggleKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.catpay.toggle",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_UNKNOWN,
-                KeyBinding.Category.create("catpay")
+                category
         ));
 
         receiveKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.catpay.receive",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_UNKNOWN,
-                KeyBinding.Category.create("catpay")
+                category
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
