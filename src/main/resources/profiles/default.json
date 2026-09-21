@@ -1,0 +1,14 @@
+{
+  "id": "default",
+  "name": "Default",
+  "serverMatchers": [],
+  "icon": {
+    "enabled": false,
+    "type": "none",
+    "glyph": ""
+  },
+  "payment": {
+    "sent": "${amount} has been sent to {user}.",
+    "received": "${amount} has been received from {user}."
+  }
+}

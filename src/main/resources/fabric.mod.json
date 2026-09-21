@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "catpay",
+  "version": "${version}",
+  "name": "CatPay",
+  "description": "Client-side payment and economy message simulator with custom glyphs and remote profiles.",
+  "authors": [
+    "itz0cat"
+  ],
+  "contact": {
+    "homepage": "https://github.com/itz0cat/CatPay",
+    "sources": "https://github.com/itz0cat/CatPay"
+  },
+  "license": "MIT",
+  "icon": "assets/catpay/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.itz0cat.catpay.CatPayClient"
+    ],
+    "modmenu": [
+      "com.itz0cat.catpay.config.ModMenuIntegration"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.4",
+    "minecraft": "~1.21.11",
+    "fabric-api": "*",
+    "cloth-config": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

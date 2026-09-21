@@ -1,0 +1,17 @@
+{
+  "id": "bananasmp",
+  "name": "BananaSMP.net",
+  "serverMatchers": [
+    "bananasmp.net",
+    "*.bananasmp.net"
+  ],
+  "icon": {
+    "enabled": true,
+    "type": "unicode",
+    "glyph": "\uE058"
+  },
+  "payment": {
+    "sent": "{icon} ${amount} has been sent to {user}.",
+    "received": "{icon} ${amount} has been received from {user}."
+  }
+}

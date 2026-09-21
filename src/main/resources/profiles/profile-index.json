@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "id": "bananasmp",
+      "name": "BananaSMP.net",
+      "file": "bananasmp.json",
+      "default": true
+    },
+    {
+      "id": "default",
+      "name": "Default",
+      "file": "default.json",
+      "default": false
+    }
+  ]
+}

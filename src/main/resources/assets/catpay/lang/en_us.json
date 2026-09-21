@@ -1,0 +1,23 @@
+{
+  "title.catpay.config": "CatPay Configuration",
+  "category.catpay.general": "General",
+  "category.catpay.payment": "Payment Simulation",
+  "category.catpay.receive": "Receive Simulation",
+  "category.catpay.profiles": "Profiles & Sync",
+  "key.categories.catpay": "CatPay",
+  "key.catpay.toggle": "Toggle CatPay (Silent)",
+  "key.catpay.receive": "Simulate Payment Received",
+  "option.catpay.enabled": "Enable CatPay",
+  "tooltip.catpay.enabled": "Master safety switch. When disabled, /pay passes directly to the server.",
+  "option.catpay.enable_fake_pay": "Enable Fake /pay",
+  "option.catpay.enable_fake_receive": "Enable Fake Receive",
+  "option.catpay.selected_profile": "Selected Profile",
+  "option.catpay.maximum_fake_payment": "Maximum Fake Payment",
+  "option.catpay.use_custom_icon": "Use Custom Icon Glyph (\uE058)",
+  "tooltip.catpay.use_custom_icon": "Enable to display BananaSMP custom font glyph \uE058. Disable on normal servers without custom glyphs.",
+  "option.catpay.receive_username": "Receive Username",
+  "option.catpay.receive_amount": "Receive Amount",
+  "option.catpay.auto_update_profiles": "Auto-Update Profiles",
+  "option.catpay.auto_select_profile_by_server": "Auto-Select Profile by Server",
+  "option.catpay.github_repo": "GitHub Repository"
+}
