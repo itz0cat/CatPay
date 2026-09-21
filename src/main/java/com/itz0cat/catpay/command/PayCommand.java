@@ -11,9 +11,13 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.network.packet.c2s.play.CommandExecutionC2SPacket;
 import net.minecraft.text.Text;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class PayCommand {
+    private static final AtomicBoolean IS_FORWARDING = new AtomicBoolean(false);
 
     public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         dispatcher.register(ClientCommandManager.literal("pay")
@@ -88,10 +92,17 @@ public class PayCommand {
     }
 
     private static void forwardToServer(String commandLine) {
-        MinecraftClient client = MinecraftClient.getInstance();
-        ClientPlayNetworkHandler handler = client.getNetworkHandler();
-        if (handler != null) {
-            handler.sendChatCommand(commandLine);
+        if (IS_FORWARDING.getAndSet(true)) {
+            return;
+        }
+        try {
+            MinecraftClient client = MinecraftClient.getInstance();
+            ClientPlayNetworkHandler handler = client.getNetworkHandler();
+            if (handler != null) {
+                handler.sendPacket(new CommandExecutionC2SPacket(commandLine));
+            }
+        } finally {
+            IS_FORWARDING.set(false);
         }
     }
 }

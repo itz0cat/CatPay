@@ -11,7 +11,7 @@
     "glyph": "\uE058"
   },
   "payment": {
-    "sent": "{icon} ${amount} has been sent to {user}.",
-    "received": "{icon} ${amount} has been received from {user}."
+    "sent": "{icon} &a${amount}&7 has been sent to &f{user}.",
+    "received": "{icon} &a${amount}&7 has been received from &f{user}."
   }
 }
