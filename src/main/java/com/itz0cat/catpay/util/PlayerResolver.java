@@ -19,8 +19,8 @@ public class PlayerResolver {
         if (handler != null) {
             Collection<PlayerListEntry> entries = handler.getPlayerList();
             for (PlayerListEntry entry : entries) {
-                if (entry.getProfile() != null && entry.getProfile().getName() != null) {
-                    names.add(entry.getProfile().getName());
+                if (entry.getProfile() != null && entry.getProfile().name() != null) {
+                    names.add(entry.getProfile().name());
                 }
             }
         }

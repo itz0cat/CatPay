@@ -22,14 +22,14 @@ public class KeybindManager {
                 "key.catpay.toggle",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_UNKNOWN,
-                "key.categories.catpay"
+                KeyBinding.Category.create("catpay")
         ));
 
         receiveKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.catpay.receive",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_UNKNOWN,
-                "key.categories.catpay"
+                KeyBinding.Category.create("catpay")
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
