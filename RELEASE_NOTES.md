@@ -1,22 +1,26 @@
-# CatPay v1.0.2 — Release & Patch Notes
+# CatPay v1.0.3 — Release & Patch Notes
 
 CatPay is a client-side payment and economy message simulator for **Minecraft Java 1.21.11** (*Mounts of Mayhem*) built for the **Fabric** mod loader.
 
-## What's New in v1.0.2
+## What's New in v1.0.3
 
-### Branding & Visual Assets
-- **New Official Mod Icon**:
-  - Incorporated the flying cash with wings icon ([`images (5).jpeg`](file:///sdcard/Download/images%20(5).jpeg)) cropped and rendered as a high-resolution 512x512 PNG at `assets/catpay/icon.png`.
-  - Displayed natively in ModMenu and the Fabric mod list.
-
-### Fixes from v1.0.1 (Included)
-- **Resolved `StackOverflowError` on Command Forwarding**:
-  - Replaced `handler.sendChatCommand(commandLine)` with direct `handler.sendPacket(new CommandExecutionC2SPacket(commandLine))` to prevent Fabric API's client command dispatcher from re-intercepting forwarded commands.
-  - Added an `AtomicBoolean` (`IS_FORWARDING`) re-entrancy guard to guarantee recursion is impossible.
-- **Authentic BananaSMP Colors & Formatting**:
-  - Currency amount rendered in authentic bright green/mint (`&a`).
-  - Transaction description rendered in gray (`&7`).
-  - Target player name rendered in white (`&f`).
+### Authentic BananaSMP MiniMessage / Hex Color Matching
+- **Pixel-Perfect Color Matching from In-Game Screenshots**:
+  - Analyzed the in-game chat comparison screenshot:
+    - In the original server message, both the currency icon (`\uE058`) and amount (`$2,000`) share the exact same custom mint/sea-green hex color `<#55FFAA>` (`RGB(108, 212, 161)`), rather than standard Minecraft `&a` lime green.
+    - Description text uses `<gray>` (`&7`).
+    - Recipient name uses `<white>` (`&f`).
+- **Added Full MiniMessage & Hex Color Support**:
+  - `MessageRenderer` now supports:
+    - MiniMessage hex tags (`<#RRGGBB>`, `<color:#RRGGBB>`)
+    - Named color tags (`<green>`, `<gray>`, `<white>`, `<aqua>`, etc.)
+    - Formatting tags (`<bold>`, `<italic>`, `<reset>`, etc.)
+    - Spigot/Bungee hex (`&#RRGGBB`, `§#RRGGBB`)
+    - Standard Minecraft formatting codes (`&a`, `§a`, etc.)
+- **Updated BananaSMP Template**:
+  - `sent`: `<#55FFAA>{icon} ${amount}<gray> has been sent to <white>{user}.`
+  - `received`: `<#55FFAA>{icon} ${amount}<gray> has been received from <white>{user}.`
+  - Both `{icon}` and `${amount}` now render in authentic mint green (`#55FFAA`).
 
 ### Compatibility
 - **Minecraft Version**: `1.21.11`

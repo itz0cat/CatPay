@@ -71,8 +71,8 @@ public class ProfileManager {
             bananasmp.getIcon().setEnabled(true);
             bananasmp.getIcon().setType("unicode");
             bananasmp.getIcon().setGlyph("\uE058");
-            bananasmp.getPayment().setSent("{icon} &a${amount}&7 has been sent to &f{user}.");
-            bananasmp.getPayment().setReceived("{icon} &a${amount}&7 has been received from &f{user}.");
+            bananasmp.getPayment().setSent("<#55FFAA>{icon} ${amount}<gray> has been sent to <white>{user}.");
+            bananasmp.getPayment().setReceived("<#55FFAA>{icon} ${amount}<gray> has been received from <white>{user}.");
             profiles.put("bananasmp", bananasmp);
         }
 
